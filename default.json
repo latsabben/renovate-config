@@ -10,7 +10,7 @@
   "packageRules": [
     {
       "matchPackageNames": [
-        "@latsabben/**"
+        "@latsabben-hq/**"
       ],
       "matchUpdateTypes": [
         "patch",
@@ -21,7 +21,7 @@
     },
     {
       "matchPackageNames": [
-        "!@latsabben/**"
+        "!@latsabben-hq/**"
       ],
       "matchUpdateTypes": [
         "patch",

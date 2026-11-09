@@ -3,7 +3,7 @@
   "packageRules": [
     {
       "matchPackageNames": [
-        "@latsabben/**"
+        "@latsabben-hq/**"
       ],
       "minimumReleaseAge": "1 days"
     }
