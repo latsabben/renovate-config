@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "@latsabben/**"
+      ],
+      "minimumReleaseAge": "1 days"
+    }
+  ]
+}
