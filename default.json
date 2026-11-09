@@ -1,56 +1,37 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    "helpers:pinGitHubActionDigests",
-    "github>latsabben/renovate-config:halts"
-  ],
+  "extends": ["config:recommended", "helpers:pinGitHubActionDigests", "github>latsabben/renovate-config:halts"],
   "platformAutomerge": true,
   "respectLatest": true,
   "packageRules": [
     {
-      "matchPackageNames": [
-        "@latsabben-hq/**"
-      ],
-      "matchUpdateTypes": [
-        "patch",
-        "minor"
-      ],
+      "description": "Org workflows follow the moving v1 tag; never pin them to a digest.",
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["latsabben/.github"],
+      "pinDigests": false
+    },
+    {
+      "matchPackageNames": ["@latsabben-hq/**"],
+      "matchUpdateTypes": ["patch", "minor"],
       "groupName": "latsabben packages",
       "automerge": true
     },
     {
-      "matchPackageNames": [
-        "!@latsabben-hq/**"
-      ],
-      "matchUpdateTypes": [
-        "patch",
-        "minor"
-      ],
+      "matchPackageNames": ["!@latsabben-hq/**"],
+      "matchUpdateTypes": ["patch", "minor"],
       "minimumReleaseAge": "3 days",
       "automerge": true
     },
     {
-      "matchPackageNames": [
-        "next",
-        "react",
-        "react-dom",
-        "drizzle-*"
-      ],
-      "matchUpdateTypes": [
-        "minor"
-      ],
+      "matchPackageNames": ["next", "react", "react-dom", "drizzle-*"],
+      "matchUpdateTypes": ["minor"],
       "automerge": false
     },
     {
-      "matchUpdateTypes": [
-        "major"
-      ],
+      "matchUpdateTypes": ["major"],
       "dependencyDashboardApproval": true,
       "automerge": false,
-      "addLabels": [
-        "campaign"
-      ]
+      "addLabels": ["campaign"]
     }
   ]
 }
